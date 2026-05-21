@@ -8,18 +8,17 @@ transform centro:
     xalign 0.5
     yalign 1.0
 
-image side protagonista = "protagonista teste ia.png"
+define r = Character("Ryu", color="#41754a")    
+define p = Character("Protagonista",  color="#6e1414", image="protagonista")
+
+image side protagonista normal = Transform("protagonista.png", zoom=0.10)
+image side protagonista piscando = Transform("protagonista_piscando.png", zoom=0.10)
 image ryu normal = "ryu_normal.png"
 image ryu piscando = "ryu_piscando.png"
 image ryu sorrindo = "ryu_sorrindo.png"
 image ryu piscando sorrindo = "ryu_sorrindo_piscando.png"
 image ryu olhos fechados = "ryu_olhos_fechados.png"
 image bg normal = "bg.jpg"
-
-
-define r = Character("Ryu", color="#41754a")    
-define p = Character("Protagonista",  color="#6e1414", image="protagonista")
-
 
 # The game starts here.
 
@@ -32,7 +31,6 @@ label start:
     scene bg normal:
         zoom 2.0
         
-    show protagonista at centro
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "ryu happy.png" to the images
     # directory.
@@ -51,7 +49,7 @@ label start:
 
     hide ryu piscando
 
-    p "Olá, Ryu! Eu sou a protagonista do jogo. Estou animada para jogar e conhecer mais sobre você."
+    p piscando "Olá, Ryu! Eu sou a protagonista do jogo. Estou animada para jogar e conhecer mais sobre você."
 
     show ryu piscando sorrindo at centro
 
@@ -61,7 +59,7 @@ label start:
 
     r "teste de expressão"
 
-
+    p normal "teste de expressão"
     # This ends the game.
 
     return
