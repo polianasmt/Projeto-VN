@@ -506,3 +506,4 @@ style navigation_button_text:
     color "#f7d8ef"
     hover_color "#ffffff"
     size 34
+

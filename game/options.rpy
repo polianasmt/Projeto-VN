@@ -12,6 +12,8 @@
 ##
 ## O _() ao redor da string a marca como elegível para tradução.
 
+define gui.game_menu_label_text_font = "fonts/PlayfairDisplay.ttf"
+
 define config.name = _("The Cat Beyond the Window")
 
 
@@ -23,7 +25,7 @@ define gui.show_name = True
 
 ## A versão do jogo.
 
-define config.version = "0.2"
+define config.version = "0.1"
 
 
 ## Texto que é colocado na tela "Sobre" do jogo. Coloque o texto entre aspas
