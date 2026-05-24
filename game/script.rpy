@@ -27,7 +27,7 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-    play music "audio/teste.mpeg" volume 0.02
+    play music "audio/teste.mpeg" volume 1.0
     scene bg normal:
         zoom 2.0
         

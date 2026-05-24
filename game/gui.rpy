@@ -500,11 +500,9 @@ init python:
 style main_menu_frame:
     xsize 360
     yfill True
-    background "#1b0b1fcc"
+    background "#12071288"
 
 style navigation_button_text:
-    color "#3a1b35"
-    hover_color "#a13f8c"
+    color "#f7d8ef"
+    hover_color "#ffffff"
     size 34
-
-background "#12071288"

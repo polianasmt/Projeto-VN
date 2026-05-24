@@ -299,7 +299,7 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Início") action Start()
+            textbutton _("Início") action Start() style "main_menu_nav_button"
 
         else:
 
@@ -307,9 +307,9 @@ screen navigation():
 
             textbutton _("Salvar") action ShowMenu("save")
 
-        textbutton _("Carga") action ShowMenu("load")
+        textbutton _("Carregar") action ShowMenu("load") style "main_menu_nav_button"
 
-        textbutton _("Preferências") action ShowMenu("preferences")
+        textbutton _("Preferências") action ShowMenu("preferences") style "main_menu_nav_button"
 
         if _in_replay:
 
@@ -319,18 +319,18 @@ screen navigation():
 
             textbutton _("Menu principal") action MainMenu()
 
-        textbutton _("Sobre") action ShowMenu("about")
+        textbutton _("Sobre") action ShowMenu("about") style "main_menu_nav_button"
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## A ajuda não é necessária ou relevante para dispositivos móveis.
-            textbutton _("Ajuda") action ShowMenu("help")
+            textbutton _("Ajuda") action ShowMenu("help") style "main_menu_nav_button"
 
         if renpy.variant("pc"):
 
             ## O botão Sair é proibido no iOS e desnecessário no Android e na
             ## Web.
-            textbutton _("Sair") action Quit(confirm=not main_menu)
+            textbutton _("Sair") action Quit(confirm=not main_menu) style "main_menu_nav_button"
 
 
 style navigation_button is gui_button
@@ -342,7 +342,12 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
-
+    color "#3b2038"
+    hover_color "#8f2f7f"
+    selected_color "#8f2f7f"
+    insensitive_color "#9b8f9a"
+    size 30
+    outlines [(1, "#ffffffcc", 0, 0)]
 
 ## Tela do menu principal ######################################################
 ##
@@ -387,23 +392,26 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -30
-    xmaximum 1200
-    yalign 1.0
-    yoffset -30
+    xalign 0.78
+    yalign 0.82
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
 
 style main_menu_title:
     properties gui.text_properties("title")
+    color "#ffd6f3"
+    size 72
+    outlines [(3, "#1a0718", 0, 0), (1, "#6e245f", 0, 0)]
 
 style main_menu_version:
     properties gui.text_properties("version")
+    color "#d8a6cd"
+    size 26
+    outlines [(2, "#1a0718", 0, 0)]
 
 
 ## Tela do menu do jogo ########################################################
